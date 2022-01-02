@@ -1,22 +1,16 @@
 import React from "react";
-import { Button, Modal } from "react-bootstrap";
+import {Modal } from "react-bootstrap";
+import Formulario from "../form/form";
 
 function Dialog(props) {
   return (
     <Modal show={props.openModal} onHide={props.closeModal} backdrop="static" keyboard={false}>
-      <Modal.Header>
-        <Modal.Title>Modal title</Modal.Title>
+      <Modal.Header closeButton>
+        <Modal.Title>Create task</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        I will not close if you click outside me. Don't even try to press escape
-        key.
+      <Modal.Body className="px-5">
+        <Formulario/>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={props.closeModal}>
-          Close
-        </Button>
-        <Button variant="primary">Understood</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
