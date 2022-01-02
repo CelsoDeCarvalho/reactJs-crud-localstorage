@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app{
+    height: 100vh;
+    width: 100vw;
+
+    .task-list{
+        height:calc(100% - 38px);
+        width: 100%;
+        .no-task{
+            height: 100% !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
