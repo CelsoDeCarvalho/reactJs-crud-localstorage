@@ -12,7 +12,7 @@ function TaskCard(props) {
           {props.desc}
         </Card.Text>
         <ButtonComponet margin='2' content="update"/>
-        <ButtonComponet content="delete"/>
+        <ButtonComponet onClick={props.deleteFunction} content="delete"/>
       </Card.Body>
     </Card>
   );

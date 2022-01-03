@@ -25,6 +25,14 @@ function App() {
     );
   }
 
+  function deleteTask(taskId){
+    tasks.splice(tasks.findIndex(task=>task.uuid===taskId),1);
+    localStorage.removeItem("react-crud-task");
+    localStorage.setItem("react-crud-task",JSON.stringify(tasks));
+    setTasks(tasks)
+    document.location.reload();
+  }
+
   useEffect(() => {
       if(localStorage.getItem("react-crud-task")){
           setTasks(JSON.parse(localStorage.getItem("react-crud-task")))
@@ -38,7 +46,7 @@ function App() {
         <div className="task-list pt-2">
           {tasks.length===0? noTask(): (
             tasks.map((task,index)=>(
-                <TaskCard task={task.task} desc={task.desc} date={task.eventDate} key={index}/>
+                <TaskCard deleteFunction={()=>deleteTask(task.uuid)} task={task.task} desc={task.desc} date={task.eventDate} key={index}/>
             ))
           )}
         </div>
