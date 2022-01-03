@@ -32,6 +32,7 @@ function Formulario() {
       tasks.push(task);
     }
     localStorage.setItem("react-crud-task", JSON.stringify(tasks));
+    window.location.reload();
   }
 
   return (

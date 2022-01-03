@@ -38,7 +38,7 @@ function App() {
         <div className="task-list pt-2">
           {tasks.length===0? noTask(): (
             tasks.map((task,index)=>(
-                <TaskCard key={index}/>
+                <TaskCard task={task.task} desc={task.desc} date={task.eventDate} key={index}/>
             ))
           )}
         </div>
