@@ -46,13 +46,13 @@ function App() {
         <div className="task-list pt-2">
           {tasks.length===0? noTask(): (
             tasks.map((task,index)=>(
-                <TaskCard deleteFunction={()=>deleteTask(task.uuid)} task={task.task} desc={task.desc} date={task.eventDate} key={index}/>
+                <TaskCard deleteFunction={()=>deleteTask(task.uuid)} task={task.task} id={task.uuid} desc={task.desc} date={task.eventDate} key={index}/>
             ))
           )}
         </div>
       </Container>
 
-      <Dialog openModal={openModal} closeModal={()=>handleClosenModal()}/>
+      <Dialog typeFunction='save' openModal={openModal} closeModal={()=>handleClosenModal()}/>
     </div>
   );
 }
